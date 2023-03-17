@@ -20,13 +20,26 @@ main{
 
 }
 
-.art-home{
-    display: inline-block;
-    align-items: center;
-    justify-content: space-between;
-
+.card-title{
+     text-shadow: 1px 1px 2px black, 0 0 0.2em purple;
+     color: white;
 }
 
-tbody{
-    margin: 5% 5%;
+.card-text{
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black, 0 0 0.2em rgb(165, 32, 105);
+    color: white;
+}
+
+.card-foot{
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black, 0 0 0.2em rgb(70, 36, 116);
+    color: white;
+}
+
+.btn{
+    background-color: grey;
+    color: aliceblue;
+    font-weight: 600;
+    border-radius: 0.25rem;
 }
