@@ -1,48 +1,32 @@
-// // UPCOMING EVENT
-getFetch();
-async function getFetch() {
+const upcomingE = document.getElementById("tarjetas");
 
-    viewSpiner(conteinerCardsFuture);
+const DateBase = data.currentDate; 
 
-    await fetch(APIurl)
-        .then(res => res.json())
-        .then(data => {
+function crearTarjetas(lista) {
 
+let tarjetasCargadas = "";
 
-            let eventos = data.events;  // guardo mis eventos
+      lista.forEach((evento) => {
+      if(evento.date>DateBase){
 
-            const eventsFuture = eventos.filter(evento => dateReturn(data.currentDate) < dateReturn(evento.date));
+      tarjetasCargadas +=
+        `<div class="card event__card border-0 text-center">
+            <div class="col">
+              <div class="card h-100" style="margin-left: 90px">
+                <img class="card-img rounded" src=" ${evento.image} "width="100" height="200">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Name: ${evento.name}</h5>
+                    <p class="card-text">Description: ${evento.description}</p>
+                   <input type="button"  onclick="details('${evento._id}')" value="Ver más" class="btn mt-auto">
+                </div>
+               </div>
+            </div>
+        </div>  `  
+      }}) 
 
-            printCheckboxs(categoryReturn(eventsFuture), conteinerCheckboxFuture); // imprime checkbos en base a eventos
+      upcomingE.innerHTML = tarjetasCargadas;
+}
 
-            const checkboxsFuture = document.querySelectorAll('input[type="checkbox"]'); // selecciona todos los checkbox
-
-            let arrayCheckedFuture = [];
-            let textInputFuture = '';
-
-            checkboxsFuture.forEach(elemento => elemento.addEventListener('click', (e) => { // evento click en los checkbox y filtrado
-
-                if (e.target.checked) {
-
-                    arrayCheckedFuture.push(e.target.parentNode.textContent);
-                    filtradora(arrayCheckedFuture, eventsFuture, conteinerCardsFuture, textInputFuture, rutaDetails, rutaImgHtml);
-
-                } else {
-
-                    arrayCheckedFuture = arrayCheckedFuture.filter(elemento => elemento !== e.target.parentNode.textContent);
-                    filtradora(arrayCheckedFuture, eventsFuture, conteinerCardsFuture, textInputFuture, rutaDetails, rutaImgHtml);
-
-                }
-            }))
-
-            inputFuture.addEventListener('keyup', (e) => { // evento keyup en el search y filtrado
-
-                textInputFuture = e.target.value;
-
-                filtradora(arrayCheckedFuture, eventsFuture, conteinerCardsFuture, textInputFuture, rutaDetails, rutaImgHtml);
-
-            })
-
-            filtradora(arrayCheckedFuture, eventsFuture, conteinerCardsFuture, textInputFuture, rutaDetails, rutaImgHtml);
-        })
+function details(id) {
+  window.location.href = `./details.html?id=${id}`;
 }
