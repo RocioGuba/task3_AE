@@ -1,0 +1,32 @@
+header{
+        position: sticky;
+    }
+
+.header_Logo{
+display: block;
+object-fit: contain;
+width: 50%;
+height: 20%;
+}
+
+main{
+    background-image: url(./assets/imgcarouselgris.png);
+}
+
+
+.nav-link{
+    width: 100px;
+    height: 100px;
+
+}
+
+.art-home{
+    display: inline-block;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+tbody{
+    margin: 5% 5%;
+}
