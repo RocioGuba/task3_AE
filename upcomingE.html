@@ -62,32 +62,21 @@
       </ul>
           </div>
 </main>
-    
-
-
-<section>
-    <!-- checkbox search -->
-    <div class="filtros d-flex align-items-center justify-content-center">
-
-      <div class="container row mt-4 align-items-center">
-          <!-- checkbox -->
-          <div class="col-xs-1 col-lg-8 contenedor-input" id="contenedor-checkbox-future">
-              
-          </div>
-
-          <!-- input search -->
-          <div class="col-xs-1 col-lg-4 contenedor-search text-center d-flex justify-content-between">
-              <input class="w-100 py-1 ps-2" type="search" name="busqueda-eventos" id="input-future" placeholder="Search..">
-          </div>
+   
+<!--FORMULARIO Y TARJETAS-->
+<div class="formulario flex-column-reverse  flex-lg-row">
+  <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+          <form class="d-flex">
+              <input id="label-search" class="form-control me-2" type="text" placeholder="Search" aria-label="Search" style="margin-left: 110px; width: 1000px;">
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+          <form id="checkBox" class="d-flex flex-lg-row container" style="margin-left: 160px;"></form>
       </div>
-  </div>
-
-</section>
-
-
+  </nav>
+</div>
 <section style="margin: 70px;">
-  <div class="row row-cols-1 row-cols-md-3 g-4" id="tarjetas">
-  </div>          
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="tarjetas"></div>
 </section>
 
 <!--FOOTER-->
