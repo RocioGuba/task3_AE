@@ -3,10 +3,10 @@ const tarjetasIndex = document.getElementById("tarjetas")
 //let tarjetasCargadas = crearTarjetas(data.events);
 
 function crearTarjetas(lista){
-    let tarjetas = "";
+    let tarjeta = "";
 
     for (let evento of lista){
-      tarjetas +=`
+      tarjeta +=`
       <div class="card event__card border-0 text-center">
         <div class="col">
             <div class="card h-100" style="margin-left: 90px">
@@ -23,7 +23,7 @@ function crearTarjetas(lista){
        </div>
     </div> `
   }
-  tarjetasIndex.innerHTML = tarjetasCargadas;
+  tarjetasIndex.innerHTML = tarjeta;
    // return tarjetas;
 }
 
